@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>نضارة — روتينك الجمالي، مخصص لكِ وحدك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#E8175D;
+    --rose-dark:#C4416A;
+    --gold:#C9A96E;
+    --gold-bg:#FDF8EF;
+    --soft-pink:#FEE8EE;
+    --cream:#FAF8F5;
+    --mauve:#3A1A30;
+    --mauve-2:#2A0F22;
+    --ink:#111111;
+    --muted:#8E8E93;
+    --line:rgba(58,26,48,.08);
+  }
+  *{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+  html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Tajawal',system-ui,sans-serif;}
+  body{font-size:16px;line-height:1.6;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .display{font-family:'Amiri',serif;font-weight:700;letter-spacing:-.01em;}
+  .en{font-family:'Inter',sans-serif;direction:ltr;display:inline-block;letter-spacing:.02em;}
+  .container{max-width:1240px;margin:0 auto;padding:0 28px;}
+
+  /* ============ HEADER ============ */
+  .nav{
+    position:fixed;top:0;right:0;left:0;z-index:50;
+    background:rgba(250,248,245,.72);
+    backdrop-filter:saturate(160%) blur(18px);
+    -webkit-backdrop-filter:saturate(160%) blur(18px);
+    border-bottom:1px solid rgba(58,26,48,.06);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;
+    background:
+      radial-gradient(circle at 30% 30%, #fff 0 18%, transparent 19%),
+      conic-gradient(from 200deg, var(--pink), var(--rose-dark), var(--gold), var(--pink));
+    box-shadow:0 6px 18px rgba(232,23,93,.25), inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .brand-name{font-family:'Amiri',serif;font-size:26px;font-weight:700;color:var(--mauve);}
+  .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.18em;margin-top:2px;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{font-size:14.5px;color:var(--mauve);opacity:.78;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    background:linear-gradient(135deg,var(--pink),var(--rose-dark));
+    color:#fff;padding:11px 22px;border-radius:999px;font-weight:700;font-size:14px;
+    box-shadow:0 8px 22px rgba(232,23,93,.28);transition:transform .2s, box-shadow .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(232,23,93,.36);}
+  @media (max-width:780px){ .nav-links a:not(.nav-cta){display:none;} }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;background:var(--mauve);color:#fff;overflow:hidden;
+    padding:140px 0 110px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(50% 38% at 88% 22%, rgba(232,23,93,.22), transparent 70%),
+      radial-gradient(40% 30% at 12% 78%, rgba(201,169,110,.18), transparent 70%),
+      radial-gradient(80% 60% at 50% 110%, rgba(196,65,106,.25), transparent 70%);
+    pointer-events:none;
+  }
+  .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+  .particle{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,.9), rgba(255,255,255,0) 70%);
+    animation:float linear infinite;opacity:.5;
+  }
+  .particle.gold{background:radial-gradient(circle, rgba(201,169,110,.9), rgba(201,169,110,0) 70%);}
+  .particle.pink{background:radial-gradient(circle, rgba(254,232,238,.9), rgba(254,232,238,0) 70%);}
+  @keyframes float{
+    0%{transform:translateY(20px) translateX(0);opacity:0;}
+    20%{opacity:.7;}
+    100%{transform:translateY(-120vh) translateX(20px);opacity:0;}
+  }
+  .hero-grid{
+    position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;
+  }
+  @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:80px;}}
+
+  .pill{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 16px;border-radius:999px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(201,169,110,.35);
+    font-size:13px;color:#F7E9D2;backdrop-filter:blur(6px);
+  }
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,169,110,.25);}
+  .hero h1{
+    font-family:'Amiri',serif;font-weight:700;
+    font-size:clamp(44px,6.4vw,86px);line-height:1.05;margin:22px 0 24px;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(120deg,#F4D3A6,#C9A96E 40%,#F4D3A6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero h1 .heart{display:inline-block;color:var(--pink);font-size:.7em;vertical-align:middle;margin:0 6px;}
+  .hero p.lede{
+    font-size:19px;line-height:1.7;max-width:560px;color:#EFE2E9;opacity:.92;margin:0 0 36px;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 28px;border-radius:999px;font-weight:700;font-size:15.5px;
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--pink),var(--rose-dark));
+    color:#fff;box-shadow:0 14px 32px rgba(232,23,93,.4), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(232,23,93,.5), inset 0 1px 0 rgba(255,255,255,.25);}
+  .btn-ghost{
+    background:transparent;color:#fff;border:1.5px solid rgba(254,232,238,.35);
+  }
+  .btn-ghost:hover{background:rgba(254,232,238,.08);border-color:rgba(254,232,238,.6);}
+  .btn .arrow{font-size:18px;transition:transform .2s;}
+  .btn:hover .arrow{transform:translateX(-4px);}
+
+  .hero-meta{
+    display:flex;gap:30px;align-items:center;margin-top:48px;color:#D9C8D1;font-size:13.5px;
+  }
+  .stars{color:var(--gold);letter-spacing:2px;font-size:15px;}
+  .meta-divider{width:1px;height:24px;background:rgba(255,255,255,.15);}
+
+  /* ===== Phone mockup ===== */
+  .phone-stage{
+    position:relative;display:flex;justify-content:center;align-items:center;min-height:620px;
+  }
+  .phone-stage::before{
+    content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle, rgba(232,23,93,.35), transparent 65%);
+    filter:blur(40px);
+  }
+  .phone{
+    position:relative;width:300px;height:610px;
+    background:#0E0509;border-radius:46px;padding:14px;
+    box-shadow:
+      0 50px 100px rgba(0,0,0,.55),
+      0 0 0 1px rgba(255,255,255,.08),
+      inset 0 0 0 2px rgba(201,169,110,.18);
+    transform:rotate(-2deg);
+  }
+  .phone.tilt-r{transform:rotate(4deg);}
+  .phone-screen{
+    position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;
+    background:linear-gradient(180deg,#FDF1E8 0%, #FEE8EE 55%, #F9D8E2 100%);
+  }
+  .notch{
+    position:absolute;top:10px;left:50%;transform:translateX(-50%);
+    width:90px;height:24px;background:#0E0509;border-radius:14px;z-index:5;
+  }
+  .status{
+    position:absolute;top:14px;left:0;right:0;display:flex;justify-content:space-between;
+    padding:0 28px;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    color:var(--mauve);z-index:4;direction:ltr;
+  }
+
+  /* phone content: skin score */
+  .ph-content{padding:54px 22px 22px;direction:rtl;height:100%;display:flex;flex-direction:column;}
+  .ph-greet{font-size:12.5px;color:var(--rose-dark);font-weight:600;letter-spacing:.02em;}
+  .ph-name{font-family:'Amiri',serif;font-size:22px;color:var(--mauve);margin-top:2px;font-weight:700;}
+  .ring-wrap{display:flex;justify-content:center;margin-top:16px;position:relative;}
+  .ring-wrap .ring-bg{
+    position:absolute;inset:auto;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle, rgba(232,23,93,.18), transparent 60%);
+    top:0;
+  }
+  .ring-svg{width:200px;height:200px;transform:rotate(-90deg);}
+  .ring-track{fill:none;stroke:rgba(196,65,106,.12);stroke-width:14;}
+  .ring-fill{fill:none;stroke:url(#ringGrad);stroke-width:14;stroke-linecap:round;
+    stroke-dasharray:534;stroke-dashoffset:140;}
+  .ring-center{
+    position:absolute;top:0;width:200px;height:200px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+  }
+  .score-num{font-family:'Inter',sans-serif;font-size:54px;font-weight:300;color:var(--mauve);line-height:1;}
+  .score-num span{font-size:18px;color:var(--muted);font-weight:400;}
+  .score-label{font-size:11px;color:var(--rose-dark);margin-top:6px;letter-spacing:.18em;font-weight:600;}
+  .personality{
+    margin-top:24px;text-align:center;padding:14px 16px;border-radius:18px;
+    background:linear-gradient(135deg, rgba(254,232,238,.7), rgba(253,248,239,.7));
+    border:1px solid rgba(201,169,110,.3);
+  }
+  .personality .p-label{font-size:10px;color:var(--gold);letter-spacing:.2em;font-weight:700;}
+  .personality .p-name{font-family:'Amiri',serif;font-size:20px;color:var(--mauve);margin-top:4px;font-weight:700;}
+  .personality .p-desc{font-size:11.5px;color:var(--muted);margin-top:4px;}
+  .ph-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;}
+  .ph-stat{
+    background:rgba(255,255,255,.55);border-radius:12px;padding:10px 6px;text-align:center;
+    border:1px solid rgba(196,65,106,.08);
+  }
+  .ph-stat .v{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--mauve);}
+  .ph-stat .k{font-size:10px;color:var(--muted);margin-top:2px;}
+
+  /* small floating cards near phone */
+  .float-card{
+    position:absolute;background:rgba(255,255,255,.96);
+    border-radius:18px;padding:12px 14px;color:var(--mauve);
+    box-shadow:0 18px 40px rgba(58,26,48,.25);
+    backdrop-filter:blur(10px);direction:rtl;
+    border:1px solid rgba(201,169,110,.25);
+    display:flex;align-items:center;gap:10px;
+  }
+  .fc-icon{
+    width:36px;height:36px;border-radius:12px;
+    background:linear-gradient(135deg,var(--soft-pink),#FDF1E8);
+    display:flex;align-items:center;justify-content:center;color:var(--rose-dark);flex-shrink:0;
+  }
+  .fc-title{font-size:12px;font-weight:700;}
+  .fc-sub{font-size:10.5px;color:var(--muted);margin-top:1px;}
+  .float-tl{top:80px;right:-20px;animation:bob 5s ease-in-out infinite;}
+  .float-bl{bottom:80px;left:-30px;animation:bob 6s ease-in-out infinite -2s;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+
+  /* ============ SECTIONS ============ */
+  section{position:relative;}
+  .section-pad{padding:120px 0;}
+  .section-eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:.25em;
+    color:var(--rose-dark);font-weight:700;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;background:var(--soft-pink);
+  }
+  .section-title{
+    font-family:'Amiri',serif;font-size:clamp(34px,4.4vw,56px);line-height:1.15;
+    color:var(--mauve);margin:18px 0 14px;font-weight:700;letter-spacing:-.01em;
+  }
+  .section-sub{font-size:18px;color:#5d4452;max-width:640px;line-height:1.7;}
+  .section-head{text-align:center;margin:0 auto 70px;max-width:760px;}
+  .section-head .section-sub{margin:18px auto 0;}
+
+  /* ============ HOW IT WORKS ============ */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:880px){.steps{grid-template-columns:1fr;}}
+  .step{
+    position:relative;background:#fff;border-radius:24px;padding:38px 30px 34px;
+    border:1px solid var(--line);transition:transform .3s, box-shadow .3s;
+    box-shadow:0 1px 0 rgba(58,26,48,.02);
+  }
+  .step:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(58,26,48,.10);}
+  .step-num{
+    position:absolute;top:-22px;right:30px;width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,#E5C48A,var(--gold));color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;
+    font-size:18px;font-weight:600;box-shadow:0 10px 24px rgba(201,169,110,.4);
+    border:3px solid var(--cream);
+  }
+  .step-icon{
+    width:64px;height:64px;border-radius:18px;
+    background:linear-gradient(135deg,var(--soft-pink),#FDF1E8);
+    display:flex;align-items:center;justify-content:center;color:var(--rose-dark);
+    margin-bottom:22px;
+  }
+  .step h3{font-family:'Amiri',serif;font-size:26px;color:var(--mauve);margin:0 0 10px;font-weight:700;}
+  .step p{color:#5d4452;font-size:15.5px;margin:0;line-height:1.7;}
+  .step .step-meta{
+    margin-top:22px;padding-top:18px;border-top:1px dashed rgba(196,65,106,.18);
+    font-size:13px;color:var(--rose-dark);font-weight:600;display:flex;justify-content:space-between;
+  }
+
+  /* ============ SCANNER ============ */
+  .scanner-section{
+    background:var(--mauve);color:#fff;position:relative;overflow:hidden;
+  }
+  .scanner-section::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(35% 30% at 90% 8%, rgba(201,169,110,.20), transparent 70%),
+      radial-gradient(35% 30% at 10% 95%, rgba(232,23,93,.18), transparent 70%);
+    pointer-events:none;
+  }
+  .scanner-section .section-title{color:#fff;}
+  .scanner-section .section-title .gold{
+    background:linear-gradient(120deg,#F4D3A6,#C9A96E 60%,#F4D3A6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .scanner-section .section-sub{color:#D9C8D1;}
+  .scanner-section .section-eyebrow{background:rgba(201,169,110,.18);color:var(--gold);}
+  .scan-flow{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border:1px solid rgba(201,169,110,.22);border-radius:24px;overflow:hidden;
+    background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+    margin-bottom:60px;
+  }
+  @media (max-width:880px){.scan-flow{grid-template-columns:1fr;}}
+  .scan-step{
+    padding:36px 30px;position:relative;
+    border-left:1px solid rgba(201,169,110,.15);
+  }
+  .scan-step:last-child{border-left:none;}
+  @media (max-width:880px){
+    .scan-step{border-left:none;border-bottom:1px solid rgba(201,169,110,.15);}
+    .scan-step:last-child{border-bottom:none;}
+  }
+  .scan-num{
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--gold);
+    letter-spacing:.25em;
+  }
+  .scan-icon-wrap{
+    width:64px;height:64px;border-radius:18px;margin:18px 0 22px;
+    background:linear-gradient(135deg, rgba(201,169,110,.25), rgba(232,23,93,.15));
+    border:1px solid rgba(201,169,110,.4);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);
+  }
+  .scan-step h3{font-family:'Amiri',serif;font-size:24px;color:#F7E9D2;margin:0 0 10px;font-weight:700;}
+  .scan-step p{font-size:14.5px;color:#C7B5BE;margin:0;line-height:1.6;}
+
+  .verdict-stage{
+    display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
+  }
+  @media (max-width:880px){.verdict-stage{grid-template-columns:1fr;}}
+  .verdict-card{
+    background:#fff;color:var(--mauve);border-radius:24px;padding:28px;
+    box-shadow:0 30px 70px rgba(0,0,0,.4);
+    border:1px solid rgba(201,169,110,.3);
+    position:relative;
+  }
+  .vc-head{
+    display:flex;align-items:center;gap:14px;padding-bottom:18px;
+    border-bottom:1px dashed rgba(196,65,106,.18);
+  }
+  .vc-logo{
+    width:54px;height:54px;border-radius:14px;
+    background:linear-gradient(135deg,#FDF1E8,#FEE8EE);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Amiri',serif;font-size:22px;color:var(--rose-dark);font-weight:700;
+    border:1px solid rgba(201,169,110,.3);
+  }
+  .vc-name{font-weight:700;font-size:15.5px;}
+  .vc-brand{font-size:12.5px;color:var(--muted);margin-top:3px;}
+  .vc-verdict{
+    margin-top:18px;padding:14px 16px;border-radius:14px;
+    background:linear-gradient(135deg, rgba(232,23,93,.10), rgba(201,169,110,.12));
+    border:1px solid rgba(232,23,93,.2);
+    display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#9A2A4A;
+  }
+  .vc-verdict .vc-badge{
+    width:28px;height:28px;border-radius:50%;background:#9A2A4A;color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;
+  }
+  .vc-reason{font-size:13.5px;color:#5d4452;margin:14px 0 0;line-height:1.6;}
+  .vc-alt{
+    margin-top:16px;padding:14px;border-radius:14px;
+    background:linear-gradient(135deg,#FDF8EF,#FEE8EE);
+    border:1px solid rgba(201,169,110,.3);
+    display:flex;align-items:center;gap:12px;
+  }
+  .vc-alt-icon{
+    width:36px;height:36px;border-radius:10px;background:#fff;color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+    border:1px solid rgba(201,169,110,.4);flex-shrink:0;
+  }
+  .vc-alt-name{font-size:13px;font-weight:700;color:var(--mauve);}
+  .vc-alt-sub{font-size:11.5px;color:var(--rose-dark);margin-top:2px;font-weight:600;}
+
+  .scan-phone-wrap{
+    display:flex;justify-content:center;align-items:center;position:relative;min-height:480px;
+  }
+  .scan-phone-wrap::before{
+    content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle, rgba(201,169,110,.25), transparent 65%);
+    filter:blur(40px);
+  }
+  .ph-scanner{padding:54px 18px 18px;direction:rtl;height:100%;display:flex;flex-direction:column;}
+  .scan-viewfinder{
+    flex:1;border-radius:18px;background:#0E0509;position:relative;overflow:hidden;
+    margin-top:8px;display:flex;align-items:center;justify-content:center;
+  }
+  .scan-product{
+    width:140px;height:200px;border-radius:10px;
+    background:linear-gradient(180deg,#F8E0E8,#FDF1E8);position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--mauve);
+  }
+  .scan-product .pr-cap{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    width:60px;height:18px;border-radius:6px 6px 4px 4px;background:#C9A96E;
+  }
+  .scan-product .pr-label{
+    font-family:'Amiri',serif;font-size:14px;font-weight:700;
+  }
+  .scan-product .pr-sub{font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.1em;}
+  .scan-product .pr-bar{
+    margin-top:14px;height:18px;width:60px;
+    background:repeating-linear-gradient(90deg, #111 0 2px, transparent 2px 4px);
+  }
+  .scan-corners{position:absolute;inset:24px;pointer-events:none;}
+  .scan-corners::before, .scan-corners::after,
+  .scan-corners > i::before, .scan-corners > i::after{
+    content:"";position:absolute;width:26px;height:26px;border:2px solid var(--gold);
+  }
+  .scan-corners::before{top:0;left:0;border-right:none;border-bottom:none;border-radius:6px 0 0 0;}
+  .scan-corners::after{top:0;right:0;border-left:none;border-bottom:none;border-radius:0 6px 0 0;}
+  .scan-corners > i::before{bottom:0;left:0;border-right:none;border-top:none;border-radius:0 0 0 6px;}
+  .scan-corners > i::after{bottom:0;right:0;border-left:none;border-top:none;border-radius:0 0 6px 0;}
+  .scan-corners > i{position:absolute;inset:0;}
+  .scan-line{
+    position:absolute;left:24px;right:24px;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    box-shadow:0 0 12px var(--gold);
+    animation:scanmove 2.4s ease-in-out infinite;
+  }
+  @keyframes scanmove{
+    0%{top:30px;}50%{top:calc(100% - 30px);}100%{top:30px;}
+  }
+  .scan-result-tip{
+    margin-top:14px;padding:12px;border-radius:14px;
+    background:linear-gradient(135deg, rgba(232,23,93,.15), rgba(201,169,110,.15));
+    border:1px solid rgba(201,169,110,.3);
+    display:flex;align-items:center;gap:10px;
+  }
+  .scan-result-tip .dot-r{width:8px;height:8px;border-radius:50%;background:#E8175D;animation:pulseDot 1.5s infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+  .scan-result-tip .txt{font-size:11.5px;color:#F7E9D2;}
+  .scan-result-tip .txt b{color:#fff;}
+
+  .save-tag{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-top:40px;padding:14px 22px;border-radius:999px;
+    background:linear-gradient(135deg, rgba(232,23,93,.18), rgba(201,169,110,.18));
+    border:1px solid rgba(201,169,110,.4);
+    font-size:15.5px;color:#F7E9D2;font-weight:600;
+  }
+  .save-tag .gold{color:var(--gold);font-weight:700;}
+
+  /* ============ TRUST MANIFESTO ============ */
+  .trust-section{
+    background:var(--cream);padding:140px 0;position:relative;
+  }
+  .trust-rule{
+    display:flex;justify-content:center;align-items:center;gap:18px;
+  }
+  .trust-rule .ln{
+    flex:1;max-width:160px;height:1px;
+    background:linear-gradient(90deg,transparent, var(--gold), transparent);
+  }
+  .trust-rule .stamp{color:var(--gold);font-size:18px;}
+  .trust-quote{
+    text-align:center;font-family:'Amiri',serif;font-weight:700;
+    font-size:clamp(36px,5vw,68px);line-height:1.2;
+    color:var(--gold);max-width:980px;margin:46px auto 28px;letter-spacing:-.01em;
+  }
+  .trust-quote .quotes{color:rgba(201,169,110,.4);font-size:1.4em;line-height:0;vertical-align:-.15em;}
+  .trust-sub{
+    text-align:center;font-size:19px;color:#5d4452;max-width:680px;margin:0 auto 70px;line-height:1.7;
+  }
+  .trust-pillars{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-top:1px solid rgba(201,169,110,.3);
+    border-bottom:1px solid rgba(201,169,110,.3);
+    padding:50px 0;
+  }
+  @media (max-width:880px){.trust-pillars{grid-template-columns:1fr;padding:30px 0;}}
+  .trust-pillar{
+    text-align:center;padding:0 30px;
+    border-left:1px solid rgba(201,169,110,.2);
+  }
+  .trust-pillar:first-child{border-left:none;}
+  @media (max-width:880px){
+    .trust-pillar{border-left:none;border-bottom:1px solid rgba(201,169,110,.2);padding:24px 20px;}
+    .trust-pillar:last-child{border-bottom:none;}
+  }
+  .trust-icon{
+    width:64px;height:64px;border-radius:50%;margin:0 auto 22px;
+    background:linear-gradient(135deg,#FDF8EF,var(--soft-pink));
+    border:1px solid rgba(201,169,110,.4);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--rose-dark);
+  }
+  .trust-pillar h4{font-family:'Amiri',serif;font-size:22px;color:var(--mauve);margin:0 0 10px;font-weight:700;}
+  .trust-pillar p{font-size:14.5px;color:#5d4452;margin:0;line-height:1.6;}
+
+  /* ============ DATABASE FEATURE ============ */
+  .db-grid{
+    position:relative;width:100%;max-width:440px;margin:0 auto;
+  }
+  .db-search{
+    background:#fff;border-radius:16px;padding:14px 18px;
+    border:1px solid rgba(201,169,110,.3);
+    box-shadow:0 14px 30px rgba(58,26,48,.10);
+    display:flex;align-items:center;gap:12px;margin-bottom:24px;
+  }
+  .db-search-icon{
+    width:32px;height:32px;border-radius:10px;
+    background:linear-gradient(135deg,var(--soft-pink),#FDF1E8);
+    display:flex;align-items:center;justify-content:center;color:var(--rose-dark);flex-shrink:0;
+  }
+  .db-search .q{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;color:var(--mauve);direction:ltr;}
+  .db-search .qr{font-size:11.5px;color:var(--rose-dark);margin-top:2px;font-weight:600;}
+  .db-brands{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  }
+  .db-brand{
+    background:#fff;border-radius:16px;padding:18px 12px;text-align:center;
+    border:1px solid rgba(201,169,110,.18);
+    transition:transform .3s, box-shadow .3s;
+    box-shadow:0 4px 14px rgba(58,26,48,.04);
+  }
+  .db-brand:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(58,26,48,.10);}
+  .db-brand .bn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--mauve);direction:ltr;line-height:1.2;}
+  .db-brand .bd{font-size:10px;color:var(--gold);margin-top:6px;letter-spacing:.05em;font-weight:700;}
+  .db-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;
+    padding:24px;border-radius:18px;background:linear-gradient(135deg,#FDF8EF,#FEE8EE);
+    border:1px solid rgba(201,169,110,.3);
+  }
+  .db-stat{text-align:center;}
+  .db-stat .v{font-family:'Inter',sans-serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;letter-spacing:-.02em;}
+  .db-stat .v .plus{color:var(--rose-dark);}
+  .db-stat .k{font-size:12px;color:#5d4452;margin-top:8px;}
+
+  /* ============ FEATURE SHOWCASE ============ */
+  .feature{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+    margin-bottom:140px;
+  }
+  .feature:last-child{margin-bottom:0;}
+  .feature.flip{direction:ltr;}
+  .feature.flip > *{direction:rtl;}
+  @media (max-width:980px){.feature,.feature.flip{grid-template-columns:1fr;gap:50px;}}
+
+  .feature-text h2{
+    font-family:'Amiri',serif;font-size:clamp(30px,3.6vw,46px);color:var(--mauve);
+    line-height:1.2;margin:18px 0 18px;font-weight:700;
+  }
+  .feature-text p{font-size:17px;color:#5d4452;line-height:1.8;max-width:520px;margin:0 0 26px;}
+  .checklist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--mauve);}
+  .check-icon{
+    width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--rose-dark));
+    color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;
+    box-shadow:0 4px 10px rgba(232,23,93,.3);
+  }
+
+  .feature-visual{
+    position:relative;border-radius:32px;padding:60px 30px;min-height:560px;
+    display:flex;justify-content:center;align-items:center;overflow:hidden;
+  }
+  .fv-pink{background:linear-gradient(160deg,#FEE8EE 0%, #F8D5E2 60%, #FDF8EF 100%);}
+  .fv-gold{background:linear-gradient(160deg,#FDF8EF 0%, #F4E5C8 60%, #FEE8EE 100%);}
+  .fv-cream{background:linear-gradient(160deg,#FAF8F5 0%, #FEE8EE 60%, #FDF8EF 100%);}
+  .fv-orn{
+    position:absolute;width:300px;height:300px;border-radius:50%;
+    border:1px dashed rgba(196,65,106,.25);
+  }
+  .fv-orn.o1{top:-100px;right:-100px;}
+  .fv-orn.o2{bottom:-120px;left:-80px;width:240px;height:240px;}
+
+  /* ===== Phone variant: AI Chat ===== */
+  .ph-chat{padding:54px 16px 18px;direction:rtl;height:100%;display:flex;flex-direction:column;}
+  .chat-head{display:flex;align-items:center;gap:10px;padding:0 6px 14px;border-bottom:1px solid rgba(196,65,106,.08);}
+  .chat-avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:conic-gradient(from 200deg,var(--pink),var(--rose-dark),var(--gold),var(--pink));
+    box-shadow:0 4px 12px rgba(232,23,93,.3);position:relative;
+  }
+  .chat-avatar::after{
+    content:"";position:absolute;inset:3px;border-radius:50%;background:#FAF8F5;
+  }
+  .chat-info .nm{font-family:'Amiri',serif;font-weight:700;font-size:15px;color:var(--mauve);}
+  .chat-info .st{font-size:10.5px;color:#22A06B;display:flex;align-items:center;gap:4px;}
+  .chat-info .st::before{content:"";width:6px;height:6px;border-radius:50%;background:#22A06B;}
+  .chat-stream{flex:1;padding:14px 4px;display:flex;flex-direction:column;gap:10px;}
+  .bubble{
+    max-width:78%;padding:10px 14px;border-radius:18px;font-size:13px;line-height:1.55;
+  }
+  .bubble.bot{
+    background:#fff;color:var(--mauve);border-bottom-right-radius:6px;align-self:flex-start;
+    box-shadow:0 4px 12px rgba(58,26,48,.06);
+  }
+  .bubble.me{
+    background:linear-gradient(135deg,var(--pink),var(--rose-dark));
+    color:#fff;border-bottom-left-radius:6px;align-self:flex-end;
+    box-shadow:0 6px 14px rgba(232,23,93,.25);
+  }
+  .quick-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+  .quick{
+    font-size:11.5px;padding:7px 12px;border-radius:999px;background:#fff;
+    color:var(--rose-dark);border:1px solid rgba(196,65,106,.2);
+  }
+  .typing{
+    display:inline-flex;gap:4px;padding:12px 14px;background:#fff;border-radius:18px;
+    align-self:flex-start;box-shadow:0 4px 12px rgba(58,26,48,.06);
+  }
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--rose-dark);opacity:.4;animation:tdot 1.2s infinite;}
+  .typing span:nth-child(2){animation-delay:.15s;}
+  .typing span:nth-child(3){animation-delay:.3s;}
+  @keyframes tdot{0%,80%,100%{opacity:.3;transform:translateY(0);}40%{opacity:1;transform:translateY(-3px);}}
+
+  /* ===== Phone variant: Routine tracker ===== */
+  .ph-rt{padding:54px 18px 18px;direction:rtl;height:100%;display:flex;flex-direction:column;}
+  .rt-date{font-size:11.5px;color:var(--rose-dark);font-weight:600;letter-spacing:.1em;}
+  .rt-title{font-family:'Amiri',serif;font-size:22px;color:var(--mauve);font-weight:700;margin-top:2px;}
+  .rt-progress{
+    margin-top:16px;padding:14px;border-radius:18px;
+    background:linear-gradient(135deg,var(--mauve),#5C2840);color:#fff;display:flex;align-items:center;gap:14px;
+  }
+  .mini-ring{position:relative;width:60px;height:60px;flex-shrink:0;}
+  .mini-ring svg{width:60px;height:60px;transform:rotate(-90deg);}
+  .mini-ring .pct{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  }
+  .rt-progress .pl{font-family:'Amiri',serif;font-size:16px;font-weight:700;}
+  .rt-progress .ps{font-size:11px;opacity:.8;margin-top:2px;}
+  .rt-tabs{display:flex;gap:6px;margin-top:14px;background:rgba(254,232,238,.5);padding:4px;border-radius:12px;}
+  .rt-tab{flex:1;font-size:12px;padding:8px;text-align:center;border-radius:9px;color:var(--muted);font-weight:600;}
+  .rt-tab.on{background:#fff;color:var(--mauve);box-shadow:0 4px 10px rgba(58,26,48,.08);}
+  .rt-list{margin-top:14px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .rt-item{
+    display:flex;align-items:center;gap:10px;padding:11px 12px;background:#fff;border-radius:14px;
+    border:1px solid rgba(196,65,106,.08);
+  }
+  .rt-check{
+    width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(196,65,106,.3);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .rt-item.done .rt-check{
+    background:linear-gradient(135deg,var(--pink),var(--rose-dark));border-color:transparent;color:#fff;font-size:11px;
+  }
+  .rt-item.done .rt-name{text-decoration:line-through;color:var(--muted);}
+  .rt-name{font-size:12.5px;color:var(--mauve);font-weight:600;}
+  .rt-step{font-size:10px;color:var(--gold);letter-spacing:.1em;font-weight:700;}
+
+  /* ============ PERSONALITIES ============ */
+  .personalities-section{
+    background:var(--mauve);color:#fff;position:relative;overflow:hidden;
+  }
+  .personalities-section::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(40% 30% at 80% 10%, rgba(201,169,110,.18), transparent 70%),
+      radial-gradient(40% 30% at 10% 90%, rgba(232,23,93,.16), transparent 70%);
+    pointer-events:none;
+  }
+  .personalities-section .section-title{color:#fff;}
+  .personalities-section .section-title .gold{
+    background:linear-gradient(120deg,#F4D3A6,#C9A96E 60%,#F4D3A6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .personalities-section .section-sub{color:#D9C8D1;}
+  .personalities-section .section-eyebrow{background:rgba(201,169,110,.18);color:var(--gold);}
+
+  .pers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;}
+  @media (max-width:1000px){.pers-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pers-grid{grid-template-columns:1fr;}}
+  .pers{
+    background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+    border:1px solid rgba(201,169,110,.22);border-radius:24px;padding:32px 26px;
+    transition:transform .3s, border-color .3s, background .3s;
+    position:relative;overflow:hidden;
+  }
+  .pers:hover{transform:translateY(-6px);border-color:rgba(201,169,110,.55);background:linear-gradient(180deg, rgba(201,169,110,.08), rgba(232,23,93,.04));}
+  .pers-icon{
+    width:60px;height:60px;border-radius:18px;
+    background:linear-gradient(135deg, rgba(201,169,110,.25), rgba(232,23,93,.15));
+    border:1px solid rgba(201,169,110,.4);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:28px;
+    margin-bottom:22px;
+  }
+  .pers h4{font-family:'Amiri',serif;font-size:24px;color:#F7E9D2;margin:0 0 8px;font-weight:700;}
+  .pers p{font-size:14px;color:#C7B5BE;margin:0;line-height:1.6;}
+  .pers .pers-tag{
+    margin-top:18px;padding-top:16px;border-top:1px solid rgba(201,169,110,.15);
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11.5px;color:var(--gold);letter-spacing:.08em;
+  }
+  .pers .pct{font-family:'Inter',sans-serif;font-weight:600;color:#F7E9D2;}
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:900px){.testimonials{grid-template-columns:1fr;}}
+  .tcard{
+    background:#fff;border-radius:24px;padding:34px 30px;border:1px solid var(--line);
+    display:flex;flex-direction:column;gap:18px;transition:transform .3s, box-shadow .3s;
+    position:relative;
+  }
+  .tcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(58,26,48,.10);}
+  .tcard .quote-mark{
+    position:absolute;top:20px;left:30px;font-family:'Amiri',serif;font-size:60px;
+    color:var(--soft-pink);line-height:1;
+  }
+  .stars-row{color:var(--gold);letter-spacing:3px;font-size:14px;}
+  .tcard q{
+    font-family:'Amiri',serif;font-size:19px;line-height:1.7;color:var(--mauve);
+    quotes:none;display:block;
+  }
+  .tcard q::before, .tcard q::after{content:"";}
+  .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .avatar{
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--soft-pink),#FDF1E8);
+    border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Amiri',serif;font-weight:700;color:var(--rose-dark);font-size:18px;
+    box-shadow:0 0 0 3px #fff, 0 0 0 4px rgba(201,169,110,.4);
+  }
+  .who .nm{font-weight:700;color:var(--mauve);font-size:15px;}
+  .who .city{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+  /* ============ CTA DOWNLOAD ============ */
+  .cta-section{
+    background:linear-gradient(120deg,var(--rose-dark),var(--pink) 70%, #E84A7C);
+    color:#fff;padding:110px 0;position:relative;overflow:hidden;
+  }
+  .cta-section::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(30% 50% at 90% 50%, rgba(201,169,110,.3), transparent 70%),
+      radial-gradient(30% 50% at 10% 50%, rgba(255,255,255,.15), transparent 70%);
+    pointer-events:none;
+  }
+  .cta-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center;position:relative;}
+  @media (max-width:900px){.cta-grid{grid-template-columns:1fr;text-align:center;}}
+  .cta-section h2{
+    font-family:'Amiri',serif;font-size:clamp(36px,4.6vw,60px);line-height:1.15;margin:0 0 20px;font-weight:700;
+  }
+  .cta-section p{font-size:18px;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 32px;max-width:520px;}
+  @media (max-width:900px){.cta-section p{margin-left:auto;margin-right:auto;}}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;}
+  @media (max-width:900px){.badges{justify-content:center;}}
+  .store-badge{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:13px 22px;border-radius:14px;background:#0E0509;color:#fff;
+    transition:transform .2s, background .2s;
+  }
+  .store-badge:hover{transform:translateY(-2px);background:#000;}
+  .store-badge .sb-icon{font-size:24px;}
+  .store-badge .sb-small{font-size:10.5px;opacity:.75;letter-spacing:.05em;}
+  .store-badge .sb-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;line-height:1.1;direction:ltr;}
+
+  .cta-deco{
+    position:relative;height:360px;display:flex;justify-content:center;align-items:center;
+  }
+  .deco-card{
+    background:rgba(255,255,255,.12);backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.25);border-radius:24px;padding:24px;
+    width:280px;color:#fff;
+  }
+  .deco-card .dc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .deco-card .dc-tag{font-size:11px;letter-spacing:.18em;background:rgba(255,255,255,.2);padding:5px 10px;border-radius:999px;}
+  .deco-card .dc-num{font-family:'Inter',sans-serif;font-size:48px;font-weight:300;line-height:1;}
+  .deco-card .dc-num span{font-size:16px;opacity:.7;}
+  .deco-card .dc-title{font-family:'Amiri',serif;font-size:22px;margin-top:10px;font-weight:700;}
+  .deco-card .dc-bar{margin-top:14px;height:6px;background:rgba(255,255,255,.2);border-radius:6px;overflow:hidden;}
+  .deco-card .dc-bar i{display:block;width:78%;height:100%;background:linear-gradient(90deg,#FFD3A1,#fff);border-radius:6px;}
+  .deco-card .dc-foot{display:flex;justify-content:space-between;font-size:11px;margin-top:8px;opacity:.85;}
+  .sparkles{position:absolute;inset:0;pointer-events:none;}
+  .spk{position:absolute;color:#FFE3B5;font-size:18px;animation:twinkle 3s ease-in-out infinite;}
+  @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8);}50%{opacity:1;transform:scale(1.2);}}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--mauve-2);color:#D9C8D1;padding:80px 0 32px;position:relative;}
+  footer::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent, var(--gold), transparent);
+  }
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:50px;margin-bottom:60px;}
+  @media (max-width:780px){.foot-grid{grid-template-columns:1fr 1fr;gap:40px;}}
+  @media (max-width:520px){.foot-grid{grid-template-columns:1fr;}}
+  .foot-brand .brand-name{color:#fff;font-size:32px;}
+  .foot-brand p{font-family:'Amiri',serif;font-size:17px;color:#C7B5BE;margin:14px 0 22px;line-height:1.7;max-width:340px;}
+  .foot-h{font-family:'Amiri',serif;font-size:17px;color:#F7E9D2;font-weight:700;margin:0 0 18px;}
+  .foot-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .foot-list a{font-size:14.5px;color:#C7B5BE;transition:color .2s;}
+  .foot-list a:hover{color:var(--gold);}
+  .socials{display:flex;gap:10px;}
+  .soc{
+    width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(201,169,110,.25);display:flex;align-items:center;justify-content:center;
+    color:var(--gold);transition:background .2s, border-color .2s, transform .2s;
+  }
+  .soc:hover{background:rgba(201,169,110,.15);border-color:var(--gold);transform:translateY(-2px);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:30px;border-top:1px solid rgba(201,169,110,.15);font-size:13px;color:#9B8590;
+    flex-wrap:wrap;gap:12px;
+  }
+
+  /* ============ Reveal animation ============ */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* divider ornament */
+  .ornament{
+    display:flex;justify-content:center;align-items:center;gap:14px;color:var(--gold);
+    margin:0 auto 22px;font-size:18px;
+  }
+  .ornament .line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" style="border-color: rgb(217, 34, 34); color: rgb(118, 0, 0); background-color: rgb(246, 246, 246)">
+  <div class="container nav-row">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">نضارة</div>
+        <div class="brand-sub en">NADARA</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#how">كيف يعمل</a>
+      <a href="#scanner">الماسح</a>
+      <a href="#features">المميزات</a>
+      <a href="#trust">نزاهتنا</a>
+      <a href="#stories">قصصهن</a>
+      <a class="nav-cta" href="#download">حملي التطبيق</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="particles" id="particles"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <span class="pill"><span class="dot"></span>الذكاء الاصطناعي • مصمم للمرأة الخليجية</span>
+      <h1>لأول مرة 
+تطبيق يعرف بشرتكِ أحسن منكِ❀</h1>
+      <p class="lede">تحليل ذكي، توصيات محايدة، وقاعدة بيانات لكل منتجات الخليج، كل اللي تحتاجينه قبل ما تشتري أي منتج.</p>
+      <div class="cta-row">
+        <a href="#download" class="btn btn-primary">حملي التطبيق <span class="arrow">←</span></a>
+        <a href="#how" class="btn btn-ghost">▷ شاهدي كيف يعمل</a>
+      </div>
+      <div class="hero-meta">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div style="margin-top:4px;font-size:12px;opacity:.8;"><span class="en">4.9</span> · أكثر من <span class="en">12,000</span> امرأة</div>
+        </div>
+        <div class="meta-divider"></div>
+        <div>
+          <div style="color:#F7E9D2;font-weight:700;">خصوصية تامة</div>
+          <div style="margin-top:4px;font-size:12px;opacity:.8;">صورُكِ تُحلَّل ولا تُحفَظ</div>
+        </div>
+        <div class="meta-divider"></div>
+        <div>
+          <div style="color:#F7E9D2;font-weight:700;">باللهجة الخليجية</div>
+          <div style="margin-top:4px;font-size:12px;opacity:.8;">محادثة طبيعية، مو استبيان</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-stage reveal">
+      <!-- floating cards -->
+      <div class="float-card float-tl">
+        <div class="fc-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 7.36H22l-6.19 4.49L18.2 21 12 16.51 5.8 21l2.39-7.15L2 9.36h7.61z"/></svg>
+        </div>
+        <div>
+          <div class="fc-title">تحسّن بـ<span class="en"> 18 </span>نقطة</div>
+          <div class="fc-sub">في آخر <span class="en">30</span> يوم</div>
+        </div>
+      </div>
+      <div class="float-card float-bl">
+        <div class="fc-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div>
+          <div class="fc-title">روتين الصباح مكتمل</div>
+          <div class="fc-sub">٤ من ٤ خطوات ✦</div>
+        </div>
+      </div>
+
+      <!-- phone -->
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <div class="status"><span>9:41</span><span>● ● ●</span></div>
+          <div class="ph-content">
+            <div class="ph-greet">صباح الخير، نوف ✿</div>
+            <div class="ph-name">تحليل بشرتكِ جاهز</div>
+
+            <div class="ring-wrap">
+              <div class="ring-bg"></div>
+              <svg class="ring-svg" viewBox="0 0 200 200">
+                <defs>
+                  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#E8175D"/>
+                    <stop offset="60%" stop-color="#C4416A"/>
+                    <stop offset="100%" stop-color="#C9A96E"/>
+                  </linearGradient>
+                </defs>
+                <circle class="ring-track" cx="100" cy="100" r="85"/>
+                <circle class="ring-fill" cx="100" cy="100" r="85"/>
+              </svg>
+              <div class="ring-center">
+                <div class="score-num">87<span>/100</span></div>
+                <div class="score-label">نقاط بشرتكِ</div>
+              </div>
+            </div>
+
+            <div class="personality">
+              <div class="p-label">شخصية بشرتكِ</div>
+              <div class="p-name">بشرة الياسمين ✿</div>
+              <div class="p-desc">متوازنة وتزهر بالعناية الصحيحة</div>
+            </div>
+
+            <div class="ph-stats">
+              <div class="ph-stat"><div class="v">٣٢</div><div class="k">رطوبة</div></div>
+              <div class="ph-stat"><div class="v">٢٤</div><div class="k">دهون</div></div>
+              <div class="ph-stat"><div class="v">٤٤</div><div class="k">صفاء</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how" class="section-pad" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="ornament"><span class="line"></span>✿<span class="line"></span></div>
+      <span class="section-eyebrow">كيف يعمل</span>
+      <h2 class="section-title">ثلاث خطوات لطيفة،<br/>وروتين مصمم لكِ وحدكِ</h2>
+      <p class="section-sub">تجربة شخصية تأخذ منكِ أقل من خمس دقائق. بدون حسابات معقدة، بدون مصطلحات طبية باردة.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num en">1</div>
+        <div class="step-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3>أجيبي على ٧ أسئلة</h3>
+        <p>محادثة قصيرة باللهجة الخليجية تفهم نوع بشرتكِ، روتينكِ، ومناخ مدينتكِ — بدون استبيان ممل.</p>
+        <div class="step-meta"><span>دردشة ذكية</span><span><span class="en">~2</span> دقيقة</span></div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num en">2</div>
+        <div class="step-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h3>صوّري وجهكِ</h3>
+        <p>ثلاث صور خفيفة بإضاءة طبيعية، يحلّلها الذكاء الاصطناعي بدقة لقياس الرطوبة، الدهون، والمسام.</p>
+        <div class="step-meta"><span>تحليل بصري</span><span>خصوصية تامة</span></div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num en">3</div>
+        <div class="step-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 10l-5 4.1L16.5 21 12 17.6 7.5 21 9 14.1 4 10l6.1-1.2z"/></svg>
+        </div>
+        <h3>احصلي على روتينكِ</h3>
+        <p>روتين صباحي ومسائي مفصّل، بمنتجات متوفرة في صيدليات الخليج وبأسعار تناسب ميزانيتكِ.</p>
+        <div class="step-meta"><span>مخصص لكِ</span><span>قابل للتعديل</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT SCANNER ============ -->
+<section id="scanner" class="section-pad scanner-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="ornament"><span class="line"></span>✦<span class="line"></span></div>
+      <span class="section-eyebrow">ماسح المنتجات</span>
+      <h2 class="section-title">قبل ما تشتري،<br/><span class="gold">اسأليها</span></h2>
+      <p class="section-sub">صوّري المنتج أو الصقي رابطه — نضارة تقولكِ هل يناسب بشرتكِ قبل ما تدفعي فلوسكِ.</p>
+    </div>
+
+    <div class="scan-flow reveal">
+      <div class="scan-step">
+        <div class="scan-num en">STEP 01</div>
+        <div class="scan-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h3>صوّري المنتج أو الصقي رابطه</h3>
+        <p>امسحي الباركود من الصيدلية، أو الصقي رابط المنتج من أي متجر إلكتروني خليجي.</p>
+      </div>
+      <div class="scan-step">
+        <div class="scan-num en">STEP 02</div>
+        <div class="scan-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 14v6h16v-6l-5-6V2"/><path d="M9 2h6"/></svg>
+        </div>
+        <h3>نضارة تحلل المكونات على بشرتكِ تحديداً</h3>
+        <p>الذكاء الاصطناعي يقارن كل مكوّن بملف بشرتكِ الشخصي، ويحسب التوافق علمياً.</p>
+      </div>
+      <div class="scan-step">
+        <div class="scan-num en">STEP 03</div>
+        <div class="scan-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>موافق ✓ أو مش مناسب ✗ + بديل أفضل</h3>
+        <p>حكم واضح بنعم أو لا، مع اقتراح بديل يناسبكِ غالباً بسعر أقل.</p>
+      </div>
+    </div>
+
+    <div class="verdict-stage reveal">
+      <div class="scan-phone-wrap">
+        <div class="phone" style="width:280px;height:560px;transform:rotate(-3deg);">
+          <div class="phone-screen" style="background:linear-gradient(180deg,#1a0815 0%,#3A1A30 100%);">
+            <div class="notch"></div>
+            <div class="status" style="color:#F7E9D2;"><span>9:41</span><span>● ● ●</span></div>
+            <div class="ph-scanner">
+              <div class="rt-date" style="color:var(--gold);">جاري المسح…</div>
+              <div class="rt-title" style="color:#F7E9D2;">حلّلي قبل ما تشتري</div>
+              <div class="scan-viewfinder">
+                <div class="scan-corners"><i></i></div>
+                <div class="scan-line"></div>
+                <div class="scan-product">
+                  <div class="pr-cap"></div>
+                  <div class="pr-label">Hydra<br/>Serum</div>
+                  <div class="pr-sub en">200ml</div>
+                  <div class="pr-bar"></div>
+                </div>
+              </div>
+              <div class="scan-result-tip">
+                <span class="dot-r"></span>
+                <div class="txt">تم التعرف على <b>Hydra Serum</b> · جاري التحليل</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="vc-head">
+          <div class="vc-logo">H</div>
+          <div>
+            <div class="vc-name">Hydra Serum 200ml</div>
+            <div class="vc-brand en">HYDRACARE · Pharmacy</div>
+          </div>
+        </div>
+        <div class="vc-verdict">
+          <div class="vc-badge">!</div>
+          <div>⚠ مش مناسب لبشرتكِ الجافة</div>
+        </div>
+        <p class="vc-reason">يحتوي على كحول <span class="en">(SD Alcohol 40)</span> قد يزيد الجفاف ويُهيّج بشرتكِ من نوع «اللؤلؤة».</p>
+        <div class="vc-alt">
+          <div class="vc-alt-icon">✓</div>
+          <div style="flex:1;">
+            <div class="vc-alt-name">جرّبي بدله: <span class="en">CeraVe Moisturizing Cream</span></div>
+            <div class="vc-alt-sub">أرخص بـ <span class="en">38</span> ريال · توافق <span class="en">94٪</span> مع بشرتكِ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="save-tag reveal">
+        ✦ وفّري <span class="gold">مئات الريالات</span> من تجارب المنتجات الخاطئة
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE SHOWCASE ============ -->
+<section id="features" class="section-pad" style="background:#fff;">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="ornament"><span class="line"></span>✦<span class="line"></span></div>
+      <span class="section-eyebrow">المميزات</span>
+      <h2 class="section-title">كل ما تحتاجينه لبشرة
+تحبينها، في تطبيق واحد</h2>
+    </div>
+
+    <!-- Feature 1: AI Chat -->
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="section-eyebrow">محادثة ذكية</span>
+        <h2>تحدّثي معها، كأنها صديقتكِ الواعية</h2>
+        <p>المساعدة الذكية في نضارة تفهم اللهجة الخليجية بكل تفاصيلها — من «بشرتي تلمع» إلى «حبوب الفك». تطرح الأسئلة الصحيحة، وتُنصت قبل أن تنصح.</p>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span> تفهم اللهجة الخليجية والمصطلحات الدارجة</li>
+          <li><span class="check-icon">✓</span> تتذكر تاريخكِ وتطورات بشرتكِ بمرور الوقت</li>
+          <li><span class="check-icon">✓</span> تجيب على أسئلتكِ في أي وقت — بدون أحكام</li>
+        </ul>
+      </div>
+      <div class="feature-visual fv-pink">
+        <div class="fv-orn o1"></div>
+        <div class="fv-orn o2"></div>
+        <div class="phone tilt-r" style="width:280px;height:570px;">
+          <div class="phone-screen">
+            <div class="notch"></div>
+            <div class="status"><span>9:41</span><span>● ● ●</span></div>
+            <div class="ph-chat">
+              <div class="chat-head">
+                <div class="chat-avatar"></div>
+                <div class="chat-info">
+                  <div class="nm">نضارة</div>
+                  <div class="st">متصلة الآن</div>
+                </div>
+              </div>
+              <div class="chat-stream">
+                <div class="bubble bot">هلا فيكِ نوف ✿ خليني أعرفكِ أكثر — كيف توصفين بشرتكِ صباحاً؟</div>
+                <div class="bubble me">تلمع شوي بمنطقة الجبهة والأنف، والباقي عادي</div>
+                <div class="bubble bot">بشرة مختلطة إذاً ✦ هل تحسين بجفاف بنهاية اليوم؟</div>
+                <div class="quick-row">
+                  <span class="quick">نعم، أحياناً</span>
+                  <span class="quick">لا، أبداً</span>
+                  <span class="quick">في الشتاء فقط</span>
+                </div>
+                <div class="typing"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Score & Personality -->
+    <div class="feature flip reveal">
+      <div class="feature-visual fv-gold">
+        <div class="fv-orn o1"></div>
+        <div class="fv-orn o2"></div>
+        <div class="phone" style="width:280px;height:570px;transform:rotate(3deg);">
+          <div class="phone-screen">
+            <div class="notch"></div>
+            <div class="status"><span>9:41</span><span>● ● ●</span></div>
+            <div class="ph-content" style="padding-top:50px;">
+              <div class="ph-greet">تحليلكِ الجديد</div>
+              <div class="ph-name">شخصية بشرتكِ</div>
+              <div class="ring-wrap" style="margin-top:10px;">
+                <svg class="ring-svg" viewBox="0 0 200 200" style="width:170px;height:170px;">
+                  <circle class="ring-track" cx="100" cy="100" r="85"/>
+                  <circle class="ring-fill" cx="100" cy="100" r="85" style="stroke-dashoffset:106;"/>
+                </svg>
+                <div class="ring-center" style="width:170px;height:170px;">
+                  <div class="score-num" style="font-size:46px;">92<span style="font-size:15px;">/100</span></div>
+                </div>
+              </div>
+              <div class="personality">
+                <div class="p-label">شخصيتكِ</div>
+                <div class="p-name">بشرة اللؤلؤة ✦</div>
+                <div class="p-desc">ناعمة، تستحق رعاية برفق</div>
+              </div>
+              <div class="ph-stats">
+                <div class="ph-stat"><div class="v">٣٨</div><div class="k">رطوبة</div></div>
+                <div class="ph-stat"><div class="v">١٨</div><div class="k">دهون</div></div>
+                <div class="ph-stat"><div class="v">٥٠</div><div class="k">صفاء</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-text">
+        <span class="section-eyebrow">نقاط وشخصية</span>
+        <h2>ليست أرقاماً جامدة،<br/>بل قصة بشرتكِ</h2>
+        <p>كل بشرة تحكي قصة. نضارة تترجم أرقام التحليل إلى شخصية شعرية تفهمينها — وتتابع تطورها معكِ شهراً بعد شهر.</p>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span> نقاط بشرة من <span class="en">100</span> تتحدّث كل أسبوع</li>
+          <li><span class="check-icon">✓</span> أربع شخصيات شاعرية حسب نوع بشرتكِ</li>
+          <li><span class="check-icon">✓</span> رسم بياني يُري تحسّنكِ بمرور الزمن</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: Routine tracker -->
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="section-eyebrow">المتابعة اليومية</span>
+        <h2>روتينكِ، في راحة يدكِ</h2>
+        <p>صباحٌ ومساءٌ مرتّبان كباقة ورد. كل خطوة بوقتها، كل منتج بسببه. علامة صغيرة عند الانتهاء — ومتعة كبيرة بالاستمرار.</p>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span> روتين صباحي ومسائي مرتّب بخطوات واضحة</li>
+          <li><span class="check-icon">✓</span> تذكير لطيف يحترم وقتكِ ولا يزعجكِ</li>
+          <li><span class="check-icon">✓</span> منتجات من <span class="en">La Roche-Posay</span>، <span class="en">CeraVe</span>، <span class="en">The Ordinary</span> وغيرها</li>
+        </ul>
+      </div>
+      <div class="feature-visual fv-cream">
+        <div class="fv-orn o1"></div>
+        <div class="fv-orn o2"></div>
+        <div class="phone tilt-r" style="width:280px;height:570px;">
+          <div class="phone-screen">
+            <div class="notch"></div>
+            <div class="status"><span>9:41</span><span>● ● ●</span></div>
+            <div class="ph-rt">
+              <div class="rt-date">الإثنين • <span class="en">5 مايو</span></div>
+              <div class="rt-title">روتينكِ اليوم</div>
+              <div class="rt-progress">
+                <div class="mini-ring">
+                  <svg viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6"/>
+                    <circle cx="30" cy="30" r="24" fill="none" stroke="#C9A96E" stroke-width="6" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="38"/>
+                  </svg>
+                  <div class="pct">75٪</div>
+                </div>
+                <div>
+                  <div class="pl">أحسنتِ ✿</div>
+                  <div class="ps">٣ من ٤ خطوات صباحية</div>
+                </div>
+              </div>
+              <div class="rt-tabs">
+                <div class="rt-tab on">الصباح</div>
+                <div class="rt-tab">المساء</div>
+                <div class="rt-tab">أسبوعي</div>
+              </div>
+              <div class="rt-list">
+                <div class="rt-item done">
+                  <div class="rt-check">✓</div>
+                  <div style="flex:1;">
+                    <div class="rt-step">الخطوة ١</div>
+                    <div class="rt-name">غسول لطيف</div>
+                  </div>
+                </div>
+                <div class="rt-item done">
+                  <div class="rt-check">✓</div>
+                  <div style="flex:1;">
+                    <div class="rt-step">الخطوة ٢</div>
+                    <div class="rt-name">سيروم فيتامين سي</div>
+                  </div>
+                </div>
+                <div class="rt-item done">
+                  <div class="rt-check">✓</div>
+                  <div style="flex:1;">
+                    <div class="rt-step">الخطوة ٣</div>
+                    <div class="rt-name">مرطّب خفيف</div>
+                  </div>
+                </div>
+                <div class="rt-item">
+                  <div class="rt-check"></div>
+                  <div style="flex:1;">
+                    <div class="rt-step">الخطوة ٤</div>
+                    <div class="rt-name">واقي شمس <span class="en">SPF 50</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DATABASE FEATURE (extra showcase block) ============ -->
+<section class="section-pad" style="background:#fff;padding-top:0;">
+  <div class="container">
+    <div class="feature flip reveal">
+      <div class="feature-visual fv-cream" style="min-height:520px;">
+        <div class="fv-orn o1"></div>
+        <div class="fv-orn o2"></div>
+        <div class="db-grid">
+          <div class="db-search">
+            <div class="db-search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div class="q">Hyaluronic Acid Serum</div>
+              <div class="qr">توفّرت في <span class="en">6</span> منتجات بالخليج</div>
+            </div>
+          </div>
+          <div class="db-brands">
+            <div class="db-brand"><div class="bn">La Roche-Posay</div><div class="bd">فرنسا</div></div>
+            <div class="db-brand"><div class="bn">CeraVe</div><div class="bd">أمريكا</div></div>
+            <div class="db-brand"><div class="bn">The Ordinary</div><div class="bd">كندا</div></div>
+            <div class="db-brand"><div class="bn">Bioderma</div><div class="bd">فرنسا</div></div>
+            <div class="db-brand"><div class="bn">Avène</div><div class="bd">فرنسا</div></div>
+            <div class="db-brand"><div class="bn">Neutrogena</div><div class="bd">أمريكا</div></div>
+            <div class="db-brand"><div class="bn">Cetaphil</div><div class="bd">أمريكا</div></div>
+            <div class="db-brand"><div class="bn">Eucerin</div><div class="bd">ألمانيا</div></div>
+            <div class="db-brand"><div class="bn">Vichy</div><div class="bd">فرنسا</div></div>
+          </div>
+          <div class="db-stats">
+            <div class="db-stat"><div class="v"><span class="plus">+</span><span class="en">5,000</span></div><div class="k">منتج خليجي</div></div>
+            <div class="db-stat"><div class="v"><span class="plus">+</span><span class="en">200</span></div><div class="k">علامة تجارية</div></div>
+            <div class="db-stat"><div class="v en">30d</div><div class="k">تحديث شهري</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-text">
+        <span class="section-eyebrow">قاعدة بيانات الخليج</span>
+        <h2>ملمّة بكل منتجات الخليج</h2>
+        <p>قاعدة بيانات ضخمة لمنتجات التجميل المتوفرة في السوق الخليجي — من الصيدليات إلى المحلات الفاخرة. نضارة تعرف إيش موجود عندكِ وإيش يناسبكِ.</p>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span> بحث بالعربي أو الإنجليزي عن أي منتج أو مكوّن</li>
+          <li><span class="check-icon">✓</span> مقارنة أسعار بين الصيدليات والمتاجر الخليجية</li>
+          <li><span class="check-icon">✓</span> تحديثات شهرية للمنتجات الجديدة في السوق</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONALITIES ============ -->
+<section id="personalities" class="section-pad personalities-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="ornament"><span class="line"></span>✿<span class="line"></span></div>
+      <span class="section-eyebrow">شخصيات البشرة</span>
+      <h2 class="section-title">أربع <span class="gold">شخصيات شاعرية</span><br/>تجدين نفسكِ في إحداهن</h2>
+      <p class="section-sub">كل بشرة لها طبعها وحاجاتها. نضارة تختار لكِ شخصيتكِ بدقة، وتُلبس روتينكِ ثوبها.</p>
+    </div>
+
+    <div class="pers-grid">
+      <div class="pers reveal">
+        <div class="pers-icon">✿</div>
+        <h4>بشرة الياسمين</h4>
+        <p>متوازنة وتزهر بالعناية الصحيحة. لا جفاف ولا لمعان زائد.</p>
+        <div class="pers-tag"><span>نوع متوازن</span><span class="pct">٣٤٪</span></div>
+      </div>
+      <div class="pers reveal">
+        <div class="pers-icon">✦</div>
+        <h4>بشرة اللؤلؤة</h4>
+        <p>ناعمة وتستحق الرعاية. تحتاج ترطيباً غنياً ومنتجات لطيفة.</p>
+        <div class="pers-tag"><span>نوع جاف</span><span class="pct">٢٢٪</span></div>
+      </div>
+      <div class="pers reveal">
+        <div class="pers-icon">✿</div>
+        <h4>بشرة الورد الأبيض</h4>
+        <p>حيوية ومضيئة، تحتاج إلى ضبط الدهون وتنقية المسام برفق.</p>
+        <div class="pers-tag"><span>نوع مختلط</span><span class="pct">٢٨٪</span></div>
+      </div>
+      <div class="pers reveal">
+        <div class="pers-icon">✦</div>
+        <h4>بشرة الأقحوان</h4>
+        <p>رقيقة وحساسة، تحب المكونات الهادئة وتتأثر بسرعة.</p>
+        <div class="pers-tag"><span>نوع حساس</span><span class="pct">١٦٪</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="stories" class="section-pad" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="ornament"><span class="line"></span>✦<span class="line"></span></div>
+      <span class="section-eyebrow">قصصهن</span>
+      <h2 class="section-title">آلاف من نساء الخليج<br/>وجدن بشرتهن في نضارة</h2>
+    </div>
+
+    <div class="testimonials">
+      <div class="tcard reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars-row">★★★★★</div>
+        <q>وفّرت أكثر من <span class="en">٣٠٠</span> ريال — كنت أشتري منتجات مش مناسبة لبشرتي، نضارة وقفتني قبل ما أغلط.</q>
+        <div class="who">
+          <div class="avatar">س</div>
+          <div>
+            <div class="nm">سارة القحطاني</div>
+            <div class="city">الرياض ، السعودية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars-row">★★★★★</div>
+        <q>أوّل مرة أحس إن التطبيق يرشّح لي بصدق — مش عشان إعلانات أو شركات. هذا اللي كنت أبحث عنه من زمان.</q>
+        <div class="who">
+          <div class="avatar">م</div>
+          <div>
+            <div class="nm">منى الفلاسي</div>
+            <div class="city">دبي ، الإمارات</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <span class="quote-mark">”</span>
+        <div class="stars-row">★★★★★</div>
+        <q>صوّرت منتج من الصيدلية، قالي «مش مناسب» قبل ما أشتريه. هذا فعلاً ذكاء — وفّر علي وقت وفلوس.</q>
+        <div class="who">
+          <div class="avatar">ن</div>
+          <div>
+            <div class="nm">نوف المطيري</div>
+            <div class="city">الكويت</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST MANIFESTO ============ -->
+<section id="trust" class="trust-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="trust-rule">
+        <span class="ln"></span><span class="stamp">❀</span><span class="ln"></span>
+      </div>
+      <div style="text-align:center;margin-top:30px;">
+        <span class="section-eyebrow">بيان نزاهة</span>
+      </div>
+      <h2 class="trust-quote">
+        <span class="quotes">”</span>نضارة مش مموّلة<br/>من أي شركة تجميل<span class="quotes">“</span>
+      </h2>
+      <p class="trust-sub">ما نرشّحه مبني على بشرتكِ فقط — مش على عمولات أو إعلانات أو اتفاقيات تجارية.</p>
+    </div>
+
+    <div class="trust-pillars reveal">
+      <div class="trust-pillar">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h4>صفر رعاية تجارية</h4>
+        <p>لا توجد علاقات تجارية مع العلامات التجارية، ولا عمولات على التوصيات.</p>
+      </div>
+      <div class="trust-pillar">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6l2 14h8l2-14M9 10v6M15 10v6"/></svg>
+        </div>
+        <h4>توصيات محايدة <span class="en">100٪</span></h4>
+        <p>الخوارزمية تختار الأنسب علمياً، بناءً على بيانات بشرتكِ فقط.</p>
+      </div>
+      <div class="trust-pillar">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 14v6h16v-6l-5-6V2"/><path d="M9 2h6"/></svg>
+        </div>
+        <h4>مبني على تحليل المكوّنات</h4>
+        <p>نقارن التركيبة الكيميائية للمنتجات بنوع بشرتكِ، لا بأسمائها التجارية.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:60px;">
+      <div class="trust-rule">
+        <span class="ln"></span><span class="stamp">❀</span><span class="ln"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD CTA ============ -->
+<section id="download" class="cta-section">
+  <div class="sparkles" id="sparkles"></div>
+  <div class="container cta-grid">
+    <div class="reveal">
+      <div class="ornament" style="justify-content:flex-start;color:#FFE3B5;"><span style="font-size:13px;letter-spacing:.3em;font-weight:700;">ابدئي اليوم</span><span class="line" style="background:linear-gradient(90deg,#FFE3B5,transparent);"></span></div>
+      <h2>ابدئي رحلتكِ مع نضارة،<br/>وأحبّي بشرتكِ كل يوم أكثر ✿</h2>
+      <p>تحميل مجاني. بدون اشتراك إجباري. خصوصية كاملة. ابدئي بأول تحليل لكِ خلال خمس دقائق.</p>
+      <div class="badges">
+        <a href="#" class="store-badge">
+          <svg class="sb-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div>
+            <div class="sb-small">تحميل من</div>
+            <div class="sb-name">App Store</div>
+          </div>
+        </a>
+        <a href="#" class="store-badge">
+          <svg class="sb-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.7c-.3.3-.5.7-.5 1.3v18c0 .6.2 1 .5 1.3l9.4-9.6L3.6 1.7zm12.7 6.6L5.5 2 14.7 11l1.6-2.7zM5.5 22l10.8-6.3-1.6-2.7L5.5 22zm15.6-9.7l-3.4-1.9-1.9 2 1.9 1.9 3.4-1.9c1-.6 1-1.5 0-2.1z"/></svg>
+          <div>
+            <div class="sb-small">تحميل من</div>
+            <div class="sb-name">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cta-deco reveal">
+      <div class="deco-card">
+        <div class="dc-top">
+          <span class="dc-tag">هذا الأسبوع</span>
+          <span style="font-size:18px;">✿</span>
+        </div>
+        <div class="dc-num">87<span>/100</span></div>
+        <div class="dc-title">بشرة الياسمين</div>
+        <div style="font-size:12.5px;opacity:.85;margin-top:6px;">ارتفعت ٤ نقاط عن الأسبوع الماضي</div>
+        <div class="dc-bar"><i></i></div>
+        <div class="dc-foot"><span>التزامكِ بالروتين</span><span>٧٨٪</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="margin-bottom:0;">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="brand-name">نضارة</div>
+            <div class="brand-sub en" style="color:var(--gold);">NADARA</div>
+          </div>
+        </div>
+        <p>روتينكِ الجمالي،<br/>مخصص لكِ وحدكِ.</p>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.3a4.8 4.8 0 01-3-1.1V15a5.5 5.5 0 11-5.5-5.5h.4v2.6a3 3 0 103 3V2h2.5a4.8 4.8 0 002.6 4.3z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="Snapchat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.8 0 5.2 1.6 5.2 4.8v3l1.4.4c.4.1.6.5.4.9-.4.6-1.4 1.5-2.5 1.5h-.3v.7c0 .8.4 1.6 1.1 2.1l1.6 1c.3.2.4.5.3.8-.4.9-1.6 1.7-3.1 1.9l-.3.5c-.1.4-.5.5-.9.4-.6-.2-1.5-.3-2.4-.3-1 0-1.7.4-2.7 1-1 .6-1.7 1-2.7 1s-1.7-.4-2.7-1c-1-.6-1.7-1-2.7-1-.9 0-1.8.1-2.4.3-.4.1-.8 0-.9-.4l-.3-.5c-1.5-.2-2.7-1-3.1-1.9-.1-.3 0-.6.3-.8l1.6-1c.7-.5 1.1-1.3 1.1-2.1v-.7h-.3c-1.1 0-2.1-.9-2.5-1.5-.2-.4 0-.8.4-.9l1.4-.4v-3C6.8 3.6 9.2 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-h">عن نضارة</div>
+        <ul class="foot-list">
+          <li><a href="#">قصة التطبيق</a></li>
+          <li><a href="#">العلم وراء التحليل</a></li>
+          <li><a href="#">المدوّنة</a></li>
+          <li><a href="#">تواصلي معنا</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="foot-h">المساعدة</div>
+        <ul class="foot-list">
+          <li><a href="#">الأسئلة الشائعة</a></li>
+          <li><a href="#">دليل الاستخدام</a></li>
+          <li><a href="#">الدعم</a></li>
+          <li><a href="#">تواصلي بنا</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="foot-h">الخصوصية</div>
+        <ul class="foot-list">
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">الشروط والأحكام</a></li>
+          <li><a href="#">حماية البيانات</a></li>
+          <li><a href="#">حقوقكِ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© <span class="en">2026</span> نضارة. صُنع بحبٍّ في الخليج ✿</div>
+      <div class="en" style="opacity:.7;">v 1.4.0 · Made for Gulf women</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Particles
+  (function(){
+    const wrap = document.getElementById('particles');
+    if(!wrap) return;
+    const count = 28;
+    const types = ['', 'gold', 'pink'];
+    for(let i=0;i<count;i++){
+      const p = document.createElement('div');
+      const t = types[Math.floor(Math.random()*types.length)];
+      p.className = 'particle ' + t;
+      const size = 2 + Math.random()*5;
+      p.style.width = size+'px';
+      p.style.height = size+'px';
+      p.style.left = (Math.random()*100)+'%';
+      p.style.bottom = (-10 + Math.random()*20)+'%';
+      const dur = 12 + Math.random()*16;
+      p.style.animationDuration = dur+'s';
+      p.style.animationDelay = (-Math.random()*dur)+'s';
+      wrap.appendChild(p);
+    }
+  })();
+
+  // Sparkles in CTA
+  (function(){
+    const wrap = document.getElementById('sparkles');
+    if(!wrap) return;
+    const positions = [
+      [10,20],[20,70],[30,40],[45,15],[55,80],[70,30],[80,65],[90,20],[15,85],[88,85],[40,55],[62,50]
+    ];
+    positions.forEach(([x,y],i)=>{
+      const s = document.createElement('div');
+      s.className = 'spk';
+      s.style.left = x+'%';
+      s.style.top = y+'%';
+      s.style.animationDelay = (i*0.25)+'s';
+      s.textContent = i%2 ? '✦' : '✿';
+      wrap.appendChild(s);
+    });
+  })();
+
+  // Reveal on scroll
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:.12, rootMargin:'0px 0px -60px 0px' });
+    els.forEach(el=>io.observe(el));
+  })();
+</script>
+</body>
+</html>
