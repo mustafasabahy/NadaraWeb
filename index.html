@@ -59,7 +59,27 @@
     box-shadow:0 8px 22px rgba(232,23,93,.28);transition:transform .2s, box-shadow .2s;
   }
   .nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(232,23,93,.36);}
-  @media (max-width:780px){ .nav-links a:not(.nav-cta){display:none;} }
+  .lang-toggle{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-width:74px;padding:10px 14px;border-radius:999px;
+    border:1px solid rgba(196,65,106,.24);color:var(--mauve);
+    background:rgba(255,255,255,.68);font-family:'Inter',sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:.04em;
+    transition:transform .2s, border-color .2s, background .2s;
+  }
+  .lang-toggle:hover{transform:translateY(-1px);border-color:rgba(196,65,106,.48);background:#fff;}
+  .lang-toggle .globe{font-size:14px;line-height:1;}
+  @media (max-width:780px){
+    .nav-row{height:auto;min-height:74px;gap:14px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap;}
+    .nav-links{gap:10px;justify-content:flex-end;flex-wrap:wrap;}
+    .nav-links a:not(.nav-cta){display:none;}
+    .nav-cta{padding:10px 16px;}
+  }
+  @media (max-width:430px){
+    .brand-name{font-size:23px;}
+    .nav-links{width:100%;justify-content:space-between;}
+    .nav-cta,.lang-toggle{flex:1;}
+  }
 
   /* ============ HERO ============ */
   .hero{
@@ -800,6 +820,80 @@
     margin:0 auto 22px;font-size:18px;
   }
   .ornament .line{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+  /* ============ English / LTR mode ============ */
+  html[dir="ltr"] body{
+    font-family:'Inter',system-ui,sans-serif;
+    letter-spacing:0;
+  }
+  html[dir="ltr"] .display,
+  html[dir="ltr"] .brand-name,
+  html[dir="ltr"] .hero h1,
+  html[dir="ltr"] .section-title,
+  html[dir="ltr"] .feature-text h2,
+  html[dir="ltr"] .step h3,
+  html[dir="ltr"] .scan-step h3,
+  html[dir="ltr"] .trust-quote,
+  html[dir="ltr"] .trust-pillar h4,
+  html[dir="ltr"] .pers h4,
+  html[dir="ltr"] .tcard q,
+  html[dir="ltr"] .cta-section h2,
+  html[dir="ltr"] .foot-h,
+  html[dir="ltr"] .foot-brand p,
+  html[dir="ltr"] .ph-name,
+  html[dir="ltr"] .personality .p-name,
+  html[dir="ltr"] .chat-info .nm,
+  html[dir="ltr"] .rt-title,
+  html[dir="ltr"] .rt-progress .pl,
+  html[dir="ltr"] .deco-card .dc-title{
+    font-family:'Inter',system-ui,sans-serif;
+    letter-spacing:0;
+  }
+  html[dir="ltr"] .en{direction:ltr;}
+  html[dir="ltr"] .hero h1,
+  html[dir="ltr"] .section-title,
+  html[dir="ltr"] .feature-text h2,
+  html[dir="ltr"] .trust-quote,
+  html[dir="ltr"] .cta-section h2{line-height:1.08;}
+  html[dir="ltr"] .hero h1{max-width:680px;font-size:clamp(42px,5.2vw,72px);}
+  html[dir="ltr"] .btn:hover .arrow{transform:translateX(4px);}
+  html[dir="ltr"] .step-num{right:auto;left:30px;}
+  html[dir="ltr"] .scan-step{border-left:none;border-right:1px solid rgba(201,169,110,.15);}
+  html[dir="ltr"] .scan-step:last-child{border-right:none;}
+  html[dir="ltr"] .feature.flip{direction:rtl;}
+  html[dir="ltr"] .feature.flip > *{direction:ltr;}
+  html[dir="ltr"] .checklist li,
+  html[dir="ltr"] .vc-head,
+  html[dir="ltr"] .vc-verdict,
+  html[dir="ltr"] .vc-alt,
+  html[dir="ltr"] .db-search,
+  html[dir="ltr"] .who,
+  html[dir="ltr"] .rt-progress,
+  html[dir="ltr"] .rt-item,
+  html[dir="ltr"] .chat-head,
+  html[dir="ltr"] .float-card,
+  html[dir="ltr"] .scan-result-tip{direction:ltr;}
+  html[dir="ltr"] .ph-content,
+  html[dir="ltr"] .ph-scanner,
+  html[dir="ltr"] .ph-chat,
+  html[dir="ltr"] .ph-rt{direction:ltr;}
+  html[dir="ltr"] .bubble.bot{align-self:flex-start;border-bottom-right-radius:18px;border-bottom-left-radius:6px;}
+  html[dir="ltr"] .bubble.me{align-self:flex-end;border-bottom-left-radius:18px;border-bottom-right-radius:6px;}
+  html[dir="ltr"] .tcard .quote-mark{left:auto;right:30px;}
+  html[dir="ltr"] .trust-pillar{border-left:none;border-right:1px solid rgba(201,169,110,.2);}
+  html[dir="ltr"] .trust-pillar:first-child{border-right:none;}
+  html[dir="ltr"] .ornament[style*="flex-start"]{justify-content:flex-start !important;}
+  @media (max-width:880px){
+    html[dir="ltr"] .scan-step{border-right:none;border-bottom:1px solid rgba(201,169,110,.15);}
+    html[dir="ltr"] .scan-step:last-child{border-bottom:none;}
+    html[dir="ltr"] .trust-pillar{border-right:none;border-bottom:1px solid rgba(201,169,110,.2);}
+    html[dir="ltr"] .trust-pillar:last-child{border-bottom:none;}
+  }
+  @media (max-width:560px){
+    html[dir="ltr"] .hero{padding-top:160px;}
+    html[dir="ltr"] .hero-meta{align-items:flex-start;gap:18px;}
+    html[dir="ltr"] .float-card{max-width:210px;}
+  }
 </style>
 </head>
 <body>
@@ -821,6 +915,7 @@
       <a href="#trust">نزاهتنا</a>
       <a href="#stories">قصصهن</a>
       <a class="nav-cta" href="#download">حملي التطبيق</a>
+      <button class="lang-toggle" type="button" id="langToggle" aria-label="Switch language" aria-pressed="false"><span class="globe">◎</span><span>EN</span></button>
     </nav>
   </div>
 </header>
@@ -1537,6 +1632,258 @@
 </footer>
 
 <script>
+  // Language switcher
+  (function(){
+    const toggle = document.getElementById('langToggle');
+    if(!toggle) return;
+
+    const copy = [
+      ['title', 'Nadara - Your beauty routine, made only for you'],
+      ['.brand-name', 'Nadara'],
+      ['.nav-links a[href="#how"]', 'How it works'],
+      ['.nav-links a[href="#scanner"]', 'Scanner'],
+      ['.nav-links a[href="#features"]', 'Features'],
+      ['.nav-links a[href="#trust"]', 'Integrity'],
+      ['.nav-links a[href="#stories"]', 'Stories'],
+      ['.nav-cta', 'Download app'],
+      ['.hero .pill', '<span class="dot"></span>AI skincare - designed for Gulf women'],
+      ['.hero h1', 'For the first time,<br>an app understands your skin better than you do ❀'],
+      ['.hero .lede', 'Smart analysis, unbiased recommendations, and a database for Gulf beauty products. Everything you need before buying anything new.'],
+      ['.hero .btn-primary', 'Download app <span class="arrow">→</span>'],
+      ['.hero .btn-ghost', '▷ See how it works'],
+      ['.hero-meta > div:nth-child(1) div:nth-child(2)', '<span class="en">4.9</span> · trusted by <span class="en">12,000+</span> women'],
+      ['.hero-meta > div:nth-child(3) div:nth-child(1)', 'Complete privacy'],
+      ['.hero-meta > div:nth-child(3) div:nth-child(2)', 'Your photos are analyzed, not stored'],
+      ['.hero-meta > div:nth-child(5) div:nth-child(1)', 'Gulf dialect support'],
+      ['.hero-meta > div:nth-child(5) div:nth-child(2)', 'A natural chat, not a cold form'],
+      ['.float-tl .fc-title', '<span class="en">18</span>-point improvement'],
+      ['.float-tl .fc-sub', 'In the last <span class="en">30</span> days'],
+      ['.float-bl .fc-title', 'Morning routine complete'],
+      ['.float-bl .fc-sub', '4 of 4 steps ✦'],
+      ['.ph-content .ph-greet', 'Good morning, Nouf ✿'],
+      ['.ph-content .ph-name', 'Your skin analysis is ready'],
+      ['.score-label', 'Your skin score'],
+      ['.personality .p-label', 'Skin personality'],
+      ['.personality .p-name', 'Jasmine Skin ✿'],
+      ['.personality .p-desc', 'Balanced, and blooms with the right care'],
+      ['.hero .ph-stats .ph-stat:nth-child(1) .v', '32'],
+      ['.ph-stats .ph-stat:nth-child(1) .k', 'Hydration'],
+      ['.hero .ph-stats .ph-stat:nth-child(2) .v', '24'],
+      ['.ph-stats .ph-stat:nth-child(2) .k', 'Oil'],
+      ['.hero .ph-stats .ph-stat:nth-child(3) .v', '44'],
+      ['.ph-stats .ph-stat:nth-child(3) .k', 'Clarity'],
+
+      ['#how .section-eyebrow', 'How it works'],
+      ['#how .section-title', 'Three gentle steps,<br>and a routine made only for you'],
+      ['#how .section-sub', 'A personal experience that takes less than five minutes. No complicated accounts, no cold medical jargon.'],
+      ['#how .step:nth-child(1) h3', 'Answer 7 questions'],
+      ['#how .step:nth-child(1) p', 'A short chat in Gulf dialect understands your skin type, routine, and city climate without a boring questionnaire.'],
+      ['#how .step:nth-child(1) .step-meta span:nth-child(1)', 'Smart chat'],
+      ['#how .step:nth-child(1) .step-meta span:nth-child(2)', '<span class="en">~2</span> min'],
+      ['#how .step:nth-child(2) h3', 'Take skin photos'],
+      ['#how .step:nth-child(2) p', 'Three simple photos in natural light help AI measure hydration, oil, pores, and visible texture.'],
+      ['#how .step:nth-child(2) .step-meta span:nth-child(1)', 'Visual analysis'],
+      ['#how .step:nth-child(2) .step-meta span:nth-child(2)', 'Private by design'],
+      ['#how .step:nth-child(3) h3', 'Get your routine'],
+      ['#how .step:nth-child(3) p', 'A detailed morning and evening routine with products available in Gulf pharmacies and suited to your budget.'],
+      ['#how .step:nth-child(3) .step-meta span:nth-child(1)', 'Personalized'],
+      ['#how .step:nth-child(3) .step-meta span:nth-child(2)', 'Easy to adjust'],
+
+      ['#scanner .section-eyebrow', 'Product scanner'],
+      ['#scanner .section-title', 'Before you buy,<br><span class="gold">ask Nadara</span>'],
+      ['#scanner .section-sub', 'Snap the product or paste its link. Nadara tells you whether it suits your skin before you spend.'],
+      ['#scanner .scan-step:nth-child(1) h3', 'Scan the product or paste its link'],
+      ['#scanner .scan-step:nth-child(1) p', 'Scan a barcode in the pharmacy, or paste a product link from any Gulf online store.'],
+      ['#scanner .scan-step:nth-child(2) h3', 'Nadara checks ingredients against your skin'],
+      ['#scanner .scan-step:nth-child(2) p', 'AI compares every ingredient with your personal skin profile and calculates compatibility.'],
+      ['#scanner .scan-step:nth-child(3) h3', 'Approved ✓ or not suitable ✗ plus a better alternative'],
+      ['#scanner .scan-step:nth-child(3) p', 'A clear yes or no verdict, with an alternative that is often a better fit and lower priced.'],
+      ['#scanner .rt-date', 'Scanning...'],
+      ['#scanner .rt-title', 'Analyze before you buy'],
+      ['#scanner .scan-result-tip .txt', 'Recognized <b>Hydra Serum</b> · analyzing'],
+      ['#scanner .vc-verdict > div:nth-child(2)', '⚠ Not suitable for your dry skin'],
+      ['#scanner .vc-reason', 'Contains <span class="en">SD Alcohol 40</span>, which may increase dryness and irritate your Pearl skin type.'],
+      ['#scanner .vc-alt-name', 'Try instead: <span class="en">CeraVe Moisturizing Cream</span>'],
+      ['#scanner .vc-alt-sub', '<span class="en">38 SAR</span> cheaper · <span class="en">94%</span> match with your skin'],
+      ['#scanner .save-tag', '✦ Save <span class="gold">hundreds of riyals</span> by avoiding the wrong products'],
+
+      ['#features > .container > .section-head .section-eyebrow', 'Features'],
+      ['#features > .container > .section-head .section-title', 'Everything you need for skin<br>you love, in one app'],
+      ['#features .feature:nth-of-type(2) .feature-text .section-eyebrow', 'Smart chat'],
+      ['#features .feature:nth-of-type(2) .feature-text h2', 'Talk to her like a thoughtful friend'],
+      ['#features .feature:nth-of-type(2) .feature-text p', 'Nadara’s smart assistant understands Gulf dialect in all its details, from "my skin gets shiny" to jawline breakouts. It asks the right questions and listens before advising.'],
+      ['#features .feature:nth-of-type(2) .checklist li:nth-child(1)', '<span class="check-icon">✓</span> Understands Gulf dialect and everyday skincare terms'],
+      ['#features .feature:nth-of-type(2) .checklist li:nth-child(2)', '<span class="check-icon">✓</span> Remembers your history and skin changes over time'],
+      ['#features .feature:nth-of-type(2) .checklist li:nth-child(3)', '<span class="check-icon">✓</span> Answers your questions anytime, without judgment'],
+      ['#features .chat-info .nm', 'Nadara'],
+      ['#features .chat-info .st', 'Online now'],
+      ['#features .bubble.bot:nth-child(1)', 'Hi Nouf ✿ let me get to know you better. How would you describe your skin in the morning?'],
+      ['#features .bubble.me', 'It gets a bit shiny on my forehead and nose, the rest is normal.'],
+      ['#features .bubble.bot:nth-child(3)', 'So it sounds combination ✦ do you feel dryness by the end of the day?'],
+      ['#features .quick:nth-child(1)', 'Yes, sometimes'],
+      ['#features .quick:nth-child(2)', 'No, never'],
+      ['#features .quick:nth-child(3)', 'Only in winter'],
+
+      ['#features .feature:nth-of-type(3) .feature-text .section-eyebrow', 'Score and personality'],
+      ['#features .feature:nth-of-type(3) .feature-text h2', 'Not cold numbers,<br>but your skin story'],
+      ['#features .feature:nth-of-type(3) .feature-text p', 'Every skin tells a story. Nadara turns analysis numbers into a poetic personality you can understand, then tracks its evolution month by month.'],
+      ['#features .feature:nth-of-type(3) .checklist li:nth-child(1)', '<span class="check-icon">✓</span> A skin score out of <span class="en">100</span>, refreshed every week'],
+      ['#features .feature:nth-of-type(3) .checklist li:nth-child(2)', '<span class="check-icon">✓</span> Four poetic personalities based on your skin type'],
+      ['#features .feature:nth-of-type(3) .checklist li:nth-child(3)', '<span class="check-icon">✓</span> A progress chart that shows improvement over time'],
+      ['#features .feature:nth-of-type(3) .ph-greet', 'Your new analysis'],
+      ['#features .feature:nth-of-type(3) .ph-name', 'Your skin personality'],
+      ['#features .feature:nth-of-type(3) .personality .p-label', 'Your personality'],
+      ['#features .feature:nth-of-type(3) .personality .p-name', 'Pearl Skin ✦'],
+      ['#features .feature:nth-of-type(3) .personality .p-desc', 'Soft, and deserves gentle care'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(1) .v', '38'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(1) .k', 'Hydration'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(2) .v', '18'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(2) .k', 'Oil'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(3) .v', '50'],
+      ['#features .feature:nth-of-type(3) .ph-stats .ph-stat:nth-child(3) .k', 'Clarity'],
+
+      ['#features .feature:nth-of-type(4) .feature-text .section-eyebrow', 'Daily tracking'],
+      ['#features .feature:nth-of-type(4) .feature-text h2', 'Your routine, in the palm of your hand'],
+      ['#features .feature:nth-of-type(4) .feature-text p', 'Morning and evening, arranged like a bouquet. Each step at the right time, each product with a reason. A small checkmark when done, and a big reason to stay consistent.'],
+      ['#features .feature:nth-of-type(4) .checklist li:nth-child(1)', '<span class="check-icon">✓</span> Clear morning and evening routines with ordered steps'],
+      ['#features .feature:nth-of-type(4) .checklist li:nth-child(2)', '<span class="check-icon">✓</span> Gentle reminders that respect your time'],
+      ['#features .feature:nth-of-type(4) .checklist li:nth-child(3)', '<span class="check-icon">✓</span> Products from <span class="en">La Roche-Posay</span>, <span class="en">CeraVe</span>, <span class="en">The Ordinary</span>, and more'],
+      ['#features .feature:nth-of-type(4) .rt-date', 'Monday · <span class="en">May 5</span>'],
+      ['#features .feature:nth-of-type(4) .rt-title', 'Today’s routine'],
+      ['#features .feature:nth-of-type(4) .pct', '75%'],
+      ['#features .feature:nth-of-type(4) .pl', 'Well done ✿'],
+      ['#features .feature:nth-of-type(4) .ps', '3 of 4 morning steps'],
+      ['#features .feature:nth-of-type(4) .rt-tab:nth-child(1)', 'Morning'],
+      ['#features .feature:nth-of-type(4) .rt-tab:nth-child(2)', 'Evening'],
+      ['#features .feature:nth-of-type(4) .rt-tab:nth-child(3)', 'Weekly'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(1) .rt-step', 'Step 1'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(1) .rt-name', 'Gentle cleanser'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(2) .rt-step', 'Step 2'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(2) .rt-name', 'Vitamin C serum'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(3) .rt-step', 'Step 3'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(3) .rt-name', 'Light moisturizer'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(4) .rt-step', 'Step 4'],
+      ['#features .feature:nth-of-type(4) .rt-item:nth-child(4) .rt-name', 'Sunscreen <span class="en">SPF 50</span>'],
+
+      ['section:nth-of-type(5) .feature-text .section-eyebrow', 'Gulf product database'],
+      ['section:nth-of-type(5) .feature-text h2', 'Knows beauty products across the Gulf'],
+      ['section:nth-of-type(5) .feature-text p', 'A large database of beauty products available in Gulf markets, from pharmacies to premium retailers. Nadara knows what is available near you and what suits you.'],
+      ['section:nth-of-type(5) .checklist li:nth-child(1)', '<span class="check-icon">✓</span> Search in Arabic or English for any product or ingredient'],
+      ['section:nth-of-type(5) .checklist li:nth-child(2)', '<span class="check-icon">✓</span> Compare prices across Gulf pharmacies and stores'],
+      ['section:nth-of-type(5) .checklist li:nth-child(3)', '<span class="check-icon">✓</span> Monthly updates for new products in the market'],
+      ['.db-search .qr', 'Available in <span class="en">6</span> Gulf products'],
+      ['.db-brand:nth-child(1) .bd', 'France'],
+      ['.db-brand:nth-child(2) .bd', 'USA'],
+      ['.db-brand:nth-child(3) .bd', 'Canada'],
+      ['.db-brand:nth-child(4) .bd', 'France'],
+      ['.db-brand:nth-child(5) .bd', 'France'],
+      ['.db-brand:nth-child(6) .bd', 'USA'],
+      ['.db-brand:nth-child(7) .bd', 'USA'],
+      ['.db-brand:nth-child(8) .bd', 'Germany'],
+      ['.db-brand:nth-child(9) .bd', 'France'],
+      ['.db-stat:nth-child(1) .k', 'Gulf products'],
+      ['.db-stat:nth-child(2) .k', 'Brands'],
+      ['.db-stat:nth-child(3) .k', 'Monthly update'],
+
+      ['#personalities .section-eyebrow', 'Skin personalities'],
+      ['#personalities .section-title', 'Four <span class="gold">poetic personalities</span><br>one of them will feel like you'],
+      ['#personalities .section-sub', 'Every skin has its own nature and needs. Nadara chooses your personality with care, then shapes your routine around it.'],
+      ['#personalities .pers:nth-child(1) h4', 'Jasmine Skin'],
+      ['#personalities .pers:nth-child(1) p', 'Balanced, and blooms with the right care. No dryness, no excess shine.'],
+      ['#personalities .pers:nth-child(1) .pers-tag span:nth-child(1)', 'Balanced type'],
+      ['#personalities .pers:nth-child(1) .pct', '34%'],
+      ['#personalities .pers:nth-child(2) h4', 'Pearl Skin'],
+      ['#personalities .pers:nth-child(2) p', 'Soft and deserving of care. Needs rich hydration and gentle products.'],
+      ['#personalities .pers:nth-child(2) .pers-tag span:nth-child(1)', 'Dry type'],
+      ['#personalities .pers:nth-child(2) .pct', '22%'],
+      ['#personalities .pers:nth-child(3) h4', 'White Rose Skin'],
+      ['#personalities .pers:nth-child(3) p', 'Fresh and bright, needs oil control and gentle pore care.'],
+      ['#personalities .pers:nth-child(3) .pers-tag span:nth-child(1)', 'Combination type'],
+      ['#personalities .pers:nth-child(3) .pct', '28%'],
+      ['#personalities .pers:nth-child(4) h4', 'Chamomile Skin'],
+      ['#personalities .pers:nth-child(4) p', 'Delicate and sensitive, loves calm ingredients and reacts quickly.'],
+      ['#personalities .pers:nth-child(4) .pers-tag span:nth-child(1)', 'Sensitive type'],
+      ['#personalities .pers:nth-child(4) .pct', '16%'],
+
+      ['#stories .section-eyebrow', 'Their stories'],
+      ['#stories .section-title', 'Thousands of Gulf women<br>found their skin in Nadara'],
+      ['#stories .tcard:nth-child(1) q', 'I saved more than <span class="en">300</span> riyals. I used to buy products that did not suit my skin, and Nadara stopped me before I made the same mistake.'],
+      ['#stories .tcard:nth-child(1) .nm', 'Sara Al-Qahtani'],
+      ['#stories .tcard:nth-child(1) .city', 'Riyadh, Saudi Arabia'],
+      ['#stories .tcard:nth-child(2) q', 'For the first time, I felt an app recommended honestly, not because of ads or brands. This is what I had been looking for.'],
+      ['#stories .tcard:nth-child(2) .nm', 'Mona Al-Falasi'],
+      ['#stories .tcard:nth-child(2) .city', 'Dubai, UAE'],
+      ['#stories .tcard:nth-child(3) q', 'I scanned a product at the pharmacy, and it told me "not suitable" before I bought it. That is real intelligence. It saved me time and money.'],
+      ['#stories .tcard:nth-child(3) .nm', 'Nouf Al-Mutairi'],
+      ['#stories .tcard:nth-child(3) .city', 'Kuwait'],
+
+      ['#trust .section-eyebrow', 'Integrity statement'],
+      ['#trust .trust-quote', '<span class="quotes">"</span>Nadara is not funded<br>by any beauty brand<span class="quotes">"</span>'],
+      ['#trust .trust-sub', 'Every recommendation is based on your skin only, not commissions, ads, or commercial agreements.'],
+      ['#trust .trust-pillar:nth-child(1) h4', 'Zero sponsorships'],
+      ['#trust .trust-pillar:nth-child(1) p', 'No commercial relationships with beauty brands, and no commissions on recommendations.'],
+      ['#trust .trust-pillar:nth-child(2) h4', '<span class="en">100%</span> unbiased recommendations'],
+      ['#trust .trust-pillar:nth-child(2) p', 'The algorithm chooses what fits scientifically, based only on your skin data.'],
+      ['#trust .trust-pillar:nth-child(3) h4', 'Built on ingredient analysis'],
+      ['#trust .trust-pillar:nth-child(3) p', 'We compare product formulas with your skin type, not brand names.'],
+
+      ['#download .ornament span:first-child', 'START TODAY'],
+      ['#download h2', 'Start your Nadara journey,<br>and love your skin more every day ✿'],
+      ['#download p', 'Free download. No forced subscription. Complete privacy. Start your first analysis in five minutes.'],
+      ['#download .store-badge:nth-child(1) .sb-small', 'Download on the'],
+      ['#download .store-badge:nth-child(2) .sb-small', 'Get it on'],
+      ['#download .dc-tag', 'This week'],
+      ['#download .dc-title', 'Jasmine Skin'],
+      ['#download .deco-card div[style*="font-size:12.5px"]', 'Up 4 points from last week'],
+      ['#download .dc-foot span:nth-child(1)', 'Routine consistency'],
+      ['#download .dc-foot span:nth-child(2)', '78%'],
+
+      ['footer .foot-brand p', 'Your beauty routine,<br>made only for you.'],
+      ['footer .foot-grid > div:nth-child(2) .foot-h', 'About Nadara'],
+      ['footer .foot-grid > div:nth-child(2) li:nth-child(1) a', 'App story'],
+      ['footer .foot-grid > div:nth-child(2) li:nth-child(2) a', 'Science behind the analysis'],
+      ['footer .foot-grid > div:nth-child(2) li:nth-child(3) a', 'Blog'],
+      ['footer .foot-grid > div:nth-child(2) li:nth-child(4) a', 'Contact us'],
+      ['footer .foot-grid > div:nth-child(3) .foot-h', 'Help'],
+      ['footer .foot-grid > div:nth-child(3) li:nth-child(1) a', 'FAQ'],
+      ['footer .foot-grid > div:nth-child(3) li:nth-child(2) a', 'Usage guide'],
+      ['footer .foot-grid > div:nth-child(3) li:nth-child(3) a', 'Support'],
+      ['footer .foot-grid > div:nth-child(3) li:nth-child(4) a', 'Contact'],
+      ['footer .foot-grid > div:nth-child(4) .foot-h', 'Privacy'],
+      ['footer .foot-grid > div:nth-child(4) li:nth-child(1) a', 'Privacy policy'],
+      ['footer .foot-grid > div:nth-child(4) li:nth-child(2) a', 'Terms and conditions'],
+      ['footer .foot-grid > div:nth-child(4) li:nth-child(3) a', 'Data protection'],
+      ['footer .foot-grid > div:nth-child(4) li:nth-child(4) a', 'Your rights'],
+      ['footer .foot-bottom > div:nth-child(1)', '© <span class="en">2026</span> Nadara. Made with love in the Gulf ✿'],
+      ['footer .foot-bottom > div:nth-child(2)', 'v 1.4.0 · Made for Gulf women']
+    ];
+
+    const entries = copy.map(([selector, en]) => {
+      const el = selector === 'title' ? document.querySelector('title') : document.querySelector(selector);
+      return el ? { el, ar: el.innerHTML, en } : null;
+    }).filter(Boolean);
+
+    function setLanguage(lang){
+      const isEn = lang === 'en';
+      document.documentElement.lang = isEn ? 'en' : 'ar';
+      document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+      document.body.classList.toggle('is-en', isEn);
+      entries.forEach(item => { item.el.innerHTML = isEn ? item.en : item.ar; });
+      toggle.querySelector('span:last-child').textContent = isEn ? 'AR' : 'EN';
+      toggle.setAttribute('aria-pressed', String(isEn));
+      toggle.setAttribute('aria-label', isEn ? 'Switch to Arabic' : 'Switch to English');
+      try{ localStorage.setItem('nadaraLang', lang); }catch(e){}
+    }
+
+    let saved = 'ar';
+    try{ saved = localStorage.getItem('nadaraLang') || 'ar'; }catch(e){}
+    setLanguage(saved === 'en' ? 'en' : 'ar');
+    toggle.addEventListener('click', () => {
+      const next = document.documentElement.lang === 'en' ? 'ar' : 'en';
+      setLanguage(next);
+    });
+  })();
+
   // Particles
   (function(){
     const wrap = document.getElementById('particles');
